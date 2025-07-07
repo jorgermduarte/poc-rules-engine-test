@@ -1,0 +1,63 @@
+[
+  {
+    "conditions": {
+      "all": [
+        {
+          "fact": "age",
+          "operator": "greaterThanInclusive",
+          "value": 18
+        },
+        {
+          "fact": "subscription",
+          "operator": "equal",
+          "value": "premium"
+        }
+      ]
+    },
+    "event": {
+      "type": "access-premium-content",
+      "params": {
+        "message": "User has access to premium content"
+      }
+    }
+  },
+  {
+    "conditions": {
+      "all": [
+        {
+          "fact": "country",
+          "operator": "equal",
+          "value": "PT"
+        },
+        {
+          "fact": "interests",
+          "operator": "contains",
+          "value": "ai"
+        }
+      ]
+    },
+    "event": {
+      "type": "suggest-ai-news",
+      "params": {
+        "message": "Show AI-related news in Portuguese"
+      }
+    }
+  },
+  {
+    "conditions": {
+      "all": [
+        {
+          "fact": "age",
+          "operator": "lessThan",
+          "value": 18
+        }
+      ]
+    },
+    "event": {
+      "type": "limit-content",
+      "params": {
+        "message": "User is underage — restrict certain features"
+      }
+    }
+  }
+]

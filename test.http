@@ -1,0 +1,36 @@
+### ✅ Cenário 1: Utilizador premium com interesse em IA (dispara 2 eventos)
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "age": 30,
+  "country": "PT",
+  "subscription": "premium",
+  "interests": ["ai", "tech", "books"]
+}
+
+###
+
+### 🚫 Cenário 2: Utilizador menor de idade (dispara 1 evento de restrição)
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "age": 15,
+  "country": "PT",
+  "subscription": "free",
+  "interests": ["games", "music"]
+}
+
+###
+
+### ✅ Cenário 3: Utilizador adulto com plano gratuito, sem interesse em IA (não dispara eventos)
+POST http://localhost:3000/api/analyze
+Content-Type: application/json
+
+{
+  "age": 28,
+  "country": "BR",
+  "subscription": "free",
+  "interests": ["sports", "history"]
+}

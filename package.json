@@ -1,0 +1,19 @@
+{
+  "name": "rules-engine-factory",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "json-rules-engine": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}
